@@ -1,1 +1,6 @@
 == Rails-API
+
+<tt>
+$ curl -H 'Accept: application/vnd.api.v1' \
+            http://api.api.test/users/1
+</tt>
