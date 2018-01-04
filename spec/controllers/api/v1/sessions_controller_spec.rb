@@ -6,6 +6,7 @@ describe Api::V1::SessionsController do
 
    before(:each) do
     @user = FactoryGirl.create :user
+    request.headers['Authorization'] =  @user.auth_token
    end
 
     context "when the credentials are correct" do
