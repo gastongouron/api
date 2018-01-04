@@ -1,6 +1,7 @@
 == Rails-API
 
-<tt>
-$ curl -H 'Accept: application/vnd.api.v1' \
-            http://api.api.test/users/1
-</tt>
+test with:
+`rails s`
+
+then:
+`http://localhost:3000/sabisu_rails/explorer`

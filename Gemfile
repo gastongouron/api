@@ -8,6 +8,13 @@ gem 'jquery-rails'
 gem 'active_model_serializers'
 gem 'devise'
 
+# postman-like api testing is done with sabisu
+gem 'sabisu_rails', github: "IcaliaLabs/sabisu-rails"
+gem 'compass-rails'
+gem 'furatto'
+gem 'font-awesome-rails'
+gem 'simple_form'
+
 group :doc do
   gem 'sdoc', require: false
 end
