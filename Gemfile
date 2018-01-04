@@ -22,4 +22,5 @@ group :test do
   gem 'factory_girl_rails'
   gem 'factory_bot'
   gem 'ffaker'
+  gem "shoulda-matchers"
 end
