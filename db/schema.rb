@@ -11,7 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180104155758) do
+ActiveRecord::Schema.define(version: 20180105135019) do
+
+  create_table "trips", force: true do |t|
+    t.string   "title",      default: ""
+    t.string   "from_city",  default: ""
+    t.string   "to_city",    default: ""
+    t.datetime "start_date", default: '2018-01-05 13:57:49'
+    t.datetime "end_date",   default: '2018-01-06 13:57:49'
+    t.decimal  "price",      default: 0.0
+    t.boolean  "published",  default: false
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "trips", ["user_id"], name: "index_trips_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
