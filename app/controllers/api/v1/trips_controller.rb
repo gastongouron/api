@@ -7,7 +7,11 @@ class Api::V1::TripsController < ApplicationController
   end
 
   def index
-    respond_with Trip.all
+    if params[:user_id]
+      respond_with Trip.where(user_id: params[:user_id])
+    else
+      respond_with Trip.all
+    end
   end
 
   def create
