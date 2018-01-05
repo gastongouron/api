@@ -17,8 +17,8 @@ ActiveRecord::Schema.define(version: 20180105135019) do
     t.string   "title",      default: ""
     t.string   "from_city",  default: ""
     t.string   "to_city",    default: ""
-    t.datetime "start_date", default: '2018-01-05 13:57:49'
-    t.datetime "end_date",   default: '2018-01-06 13:57:49'
+    t.datetime "start_date", default: '2018-01-05 00:00:00'
+    t.datetime "end_date",   default: '2018-01-05 23:59:59'
     t.decimal  "price",      default: 0.0
     t.boolean  "published",  default: false
     t.integer  "user_id"
