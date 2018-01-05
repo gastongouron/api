@@ -16,6 +16,8 @@ describe User do
   it { should respond_to(:auth_token) }
   it { should validate_uniqueness_of(:auth_token)}
 
+  it { should have_many(:trips) }
+
   describe "#generate_authentication_token!" do
     it "generates a unique token" do
       Devise.stub(:friendly_token).and_return("auniquetoken123")
@@ -27,6 +29,20 @@ describe User do
       existing_user = FactoryGirl.create(:user, auth_token: "auniquetoken123")
       @user.generate_authentication_token!
       expect(@user.auth_token).not_to eql existing_user.auth_token
+    end
+  end
+
+  describe "#products association" do
+    before do
+      @user.save
+      3.times { FactoryGirl.create :trip, user: @user }
+    end
+    it "destroys the associated trips on self destruct" do
+      trips = @user.trips
+      @user.destroy
+      trips.each do |trip|
+        expect(Product.find(trip)).to raise_error ActiveRecord::RecordNotFound
+      end
     end
   end
 

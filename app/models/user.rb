@@ -1,5 +1,8 @@
 class User < ActiveRecord::Base
 
+  has_many :trips
+  has_many :trips, dependent: :destroy
+
   validates :auth_token, uniqueness: true
 
   before_create :generate_authentication_token!
