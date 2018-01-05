@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
 
-  has_many :trips
   has_many :trips, dependent: :destroy
+  has_many :demands, dependent: :destroy
 
   validates :auth_token, uniqueness: true
 

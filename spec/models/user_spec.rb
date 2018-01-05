@@ -18,6 +18,9 @@ describe User do
 
   it { should have_many(:trips) }
 
+  it { should have_many(:trips) }
+  it { should have_many(:demands) }
+
   describe "#generate_authentication_token!" do
     it "generates a unique token" do
       Devise.stub(:friendly_token).and_return("auniquetoken123")
