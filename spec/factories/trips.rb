@@ -7,6 +7,6 @@ FactoryGirl.define do
     end_date DateTime.now.utc.end_of_day
     price { rand() * 100 }
     published false
-    user_id 1
+    user
   end
 end

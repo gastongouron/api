@@ -4,7 +4,7 @@ SabisuRails.setup do |config|
 
   config.base_api_uri = 'api.api.test'
   config.api_headers = { "Accept" => "application/vnd.api.v1" }
-  config.resources = [:users]
+  config.resources = [:users, :trips]
   config.default_resource = :users
 
   # Application name
